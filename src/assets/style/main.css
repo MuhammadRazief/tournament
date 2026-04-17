@@ -1,0 +1,17 @@
+/* container utama */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;       /* center */
+    padding: 0 20px;      /* jarak kiri kanan */
+  }
+  
+  /* optional: versi lebar */
+  .container-lg {
+    max-width: 1400px;
+  }
+  
+  /* optional: full width */
+  .container-fluid {
+    width: 100%;
+    padding: 0 20px;
+  }
