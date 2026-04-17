@@ -12,12 +12,18 @@ export default {
 </script>
 
 <style>
-#app {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: absolute;
-  font-family: 'Poppins', sans-serif;
+
+/* Solusi: tambahkan ini di global CSS (biasanya di App.vue atau index.html) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 </style>

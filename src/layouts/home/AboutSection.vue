@@ -30,15 +30,6 @@
                     
                 </div>
             </div>
-
-            <!-- Call to Action -->
-            <div class="about-cta">
-                <div class="cta-content">
-                    <h3>Bergabung Bersama Kami</h3>
-                    <p>Daftarkan tim MLBB Anda sekarang dan raih prestasi tertinggi di Bogor Champions Cup</p>
-                    <button class="btn-join">Daftar Sekarang →</button>
-                </div>
-            </div>
         </div>
     </div>
 </template>
@@ -52,7 +43,12 @@ export default {
 <style scoped>
 .about-section {
     padding: 80px 0;
-    background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+    background-image: url('@/assets/bg2.jpg');
+    background-size: cover;
+    background-position: center;
+    /* background-repeat: no-repeat; */
+    /* background-attachment: fixed; */
+    /* min-height: 100vh; */
 }
 
 .container {
@@ -126,46 +122,6 @@ export default {
     line-height: 1.8;
     color: #666;
     margin-bottom: 20px;
-}
-
-
-/* Call to Action */
-.about-cta {
-    background: linear-gradient(135deg, #3852B4 0%, #2a3f8a 100%);
-    border-radius: 20px;
-    padding: 60px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(56, 82, 180, 0.3);
-}
-
-.cta-content h3 {
-    font-size: 32px;
-    color: white;
-    margin: 0 0 15px;
-}
-
-.cta-content p {
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.9);
-    margin: 0 0 30px;
-}
-
-.btn-join {
-    background: #FFD700;
-    color: #1a1a2e;
-    border: none;
-    padding: 14px 32px;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn-join:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    background: #ffe44d;
 }
 
 /* Responsive */

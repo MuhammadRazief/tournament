@@ -1,11 +1,12 @@
 <template>
-    <div>
+    <div class="home-page">
         <CarouselComponent 
             :slides="carouselSlides"
             :autoPlay="true"
             :interval="4000"
             :transitionDuration="500"
         />
+        <Standings />
         <AboutSection />
     </div>
 </template>
@@ -13,11 +14,14 @@
 <script>
 import CarouselComponent from '../components/Carousel.vue';
 import AboutSection from '@/layouts/home/AboutSection.vue';
+import Standings from '@/layouts/home/Standings.vue';
+
 export default {
     name: 'HomePage',
     components: {
         CarouselComponent,
-        AboutSection
+        AboutSection,
+        Standings
     },
     data() {
         return {
