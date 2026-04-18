@@ -10,10 +10,10 @@
 
               <!-- Menu Desktop -->
               <ul class="nav-menu" :class="{ 'active': isMenuOpen }">
-                  <li><router-link to="/" @click="closeMenu">Home</router-link></li>
-                  <li><router-link to="/tournaments" @click="closeMenu">Tournaments</router-link></li>
-                  <li><router-link to="/teams" @click="closeMenu">Teams</router-link></li>
-                  <li><router-link to="/players" @click="closeMenu">Players</router-link></li>
+                  <li><router-link to="/" @click="closeMenu" exact-active-class="active-link">Home</router-link></li>
+                  <li><router-link to="/teams" @click="closeMenu" active-class="active-link">Tim</router-link></li>
+                  <li><router-link to="/jadwal" @click="closeMenu" active-class="active-link">Jadwal</router-link></li>
+                  <li><router-link to="/hubungi-kami" @click="closeMenu" active-class="active-link">Hubungi Kami</router-link></li>
               </ul>
 
               <!-- Hamburger Menu Button (Mobile) -->
@@ -73,12 +73,6 @@ export default {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
 }
-/* 
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px;
-} */
 
 /* Container navbar */
 .nav-container {
@@ -144,7 +138,7 @@ export default {
   display: inline-block;
 }
 
-/* Underline animation */
+/* Underline animation for hover */
 .navbar a::after {
   content: '';
   position: absolute;
@@ -152,12 +146,23 @@ export default {
   height: 2px;
   bottom: 0;
   left: 0;
-  background: linear-gradient(90deg, #fff, #FFD700);
+  background: linear-gradient(90deg, #3852B4, #FFD700);
   transition: width 0.3s ease;
 }
 
 .navbar a:hover::after {
   width: 100%;
+}
+
+/* Active link style - garis bawah permanen untuk halaman aktif */
+.navbar a.active-link::after {
+  width: 100%;
+  background: linear-gradient(90deg, #3852B4, #FFD700);
+}
+
+.navbar a.active-link {
+  color: #FFD700;
+  font-weight: 600;
 }
 
 .navbar a:hover {
@@ -314,6 +319,14 @@ export default {
       width: 100%;
       font-weight: 500;
       letter-spacing: 1px;
+  }
+
+  /* Style untuk active link di mobile */
+  .navbar a.active-link {
+      background: rgba(255, 215, 0, 0.15);
+      color: #FFD700;
+      border-left: 4px solid #FFD700;
+      padding-left: 20px;
   }
 
   .navbar a::after {

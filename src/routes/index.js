@@ -5,14 +5,23 @@ import MainLayout from '@/layouts/MainLayout.vue'
 
 // views
 import Home from '@/pages/Home.vue'
+import Tim from '@/pages/Tim.vue'
 
 const routes = [
   {
     path: '/',
     component: MainLayout,
     children: [
-      { path: '', component: Home },
-    //   { path: 'tournaments', component: Tournaments }
+      { 
+        path: '',
+        component: Home,
+        meta: { title: 'Home - Bogor Champions Cup' }
+       },
+       { 
+        path: '/teams',
+        component: Tim,
+        meta: { title: 'Teams - Bogor Champions Cup' }
+       },
     ]
   },
 //   {
@@ -30,8 +39,24 @@ const routes = [
 //     ]
 //   }
 ]
-
-export default createRouter({
+const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    }
+    return { top: 0 }
+  }
 })
+
+router.afterEach((to) => {
+  const nearestWithTitle = to.matched
+    .slice()
+    .reverse()
+    .find(r => r.meta && r.meta.title)
+
+  document.title = nearestWithTitle?.meta.title || 'Bogor Champions Cup'
+})
+
+export default router
